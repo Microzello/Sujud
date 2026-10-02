@@ -10,30 +10,46 @@ import XCTest
 final class SujudUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    /// Walks through both tabs. Needs location access, e.g.
+    /// `xcrun simctl privacy booted grant location omar.Sujud`.
     @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testPrayerTimesAndQibla() throws {
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // The first launch asks for notification permission.
+        let allow = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Allow"]
+        if allow.waitForExistence(timeout: 5) {
+            allow.tap()
+        }
+
+        for prayer in ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"] {
+            let row = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", prayer)).firstMatch
+            XCTAssertTrue(row.waitForExistence(timeout: 10), "\(prayer) row missing")
+        }
+        attachScreenshot(named: "Prayer Times")
+
+        let qiblaTab = app.buttons["Qibla"]
+        guard qiblaTab.exists else { return }
+        qiblaTab.tap()
+        XCTAssertTrue(qiblaTab.isSelected)
+        sleep(2)
+        attachScreenshot(named: "Qibla")
+    }
+
+    @MainActor
+    private func attachScreenshot(named name: String) {
+        let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 
     @MainActor
     func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
         measure(metrics: [XCTApplicationLaunchMetric()]) {
             XCUIApplication().launch()
         }

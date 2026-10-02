@@ -2,23 +2,48 @@
 //  ContentView.swift
 //  Sujud
 //
-//  Created by Omar on 2026-09-30.
-//
 
+import CoreLocation
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if LocationService.hasCompass {
+            TabView {
+                Tab("Prayer Times", systemImage: "clock") {
+                    PrayerTimesScreen()
+                }
+                Tab("Qibla", systemImage: "location.north.line") {
+                    QiblaScreen()
+                }
+            }
+        } else {
+            PrayerTimesScreen()
         }
-        .padding()
+    }
+}
+
+private struct PrayerTimesScreen: View {
+    var body: some View {
+        LocationGate { location in
+            PrayerTimesView(location: location)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.appBackground.ignoresSafeArea())
+    }
+}
+
+private struct QiblaScreen: View {
+    var body: some View {
+        LocationGate { location in
+            QiblaView(location: location)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.appBackground.ignoresSafeArea())
     }
 }
 
 #Preview {
     ContentView()
+        .environment(LocationService(previewLocation: CLLocation(latitude: 43.6532, longitude: -79.3832)))
 }

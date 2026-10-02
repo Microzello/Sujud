@@ -1,0 +1,186 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sujud"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sujud"
+          }
+        }
+      }
+    },
+    "NSLocationUsageDescription" : {
+      "comment" : "Location permission prompt (macOS)",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "يستخدم سجود موقعك لحساب مواقيت الصلاة واتجاه القبلة. لا يغادر موقعك جهازك أبدًا."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "নামাজের সময় ও কিবলার দিক নির্ণয় করতে সুজুদ আপনার অবস্থান ব্যবহার করে। আপনার অবস্থান কখনো আপনার ডিভাইসের বাইরে যায় না।"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud verwendet deinen Standort, um die Gebetszeiten und die Qibla-Richtung zu berechnen. Dein Standort verlässt niemals dein Gerät."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sujud uses your location to calculate prayer times and the Qibla direction. Your location never leaves your device."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud usa tu ubicación para calcular los horarios de oración y la dirección de la qibla. Tu ubicación nunca sale de tu dispositivo."
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "سجود از موقعیت شما برای محاسبهٔ اوقات شرعی و جهت قبله استفاده می‌کند. موقعیت شما هرگز از دستگاهتان خارج نمی‌شود."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud utilise votre position pour calculer les heures de prière et la direction de la qibla. Votre position ne quitte jamais votre appareil."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud menggunakan lokasi Anda untuk menghitung waktu salat dan arah kiblat. Lokasi Anda tidak pernah meninggalkan perangkat Anda."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud menggunakan lokasi anda untuk mengira waktu solat dan arah kiblat. Lokasi anda tidak pernah meninggalkan peranti anda."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud использует вашу геопозицию, чтобы рассчитать время намаза и направление киблы. Ваша геопозиция никогда не покидает устройство."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud, namaz vakitlerini ve kıble yönünü hesaplamak için konumunuzu kullanır. Konumunuz asla cihazınızdan çıkmaz."
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "سجود نماز کے اوقات اور قبلہ کی سمت معلوم کرنے کے لیے آپ کا مقام استعمال کرتا ہے۔ آپ کا مقام کبھی آپ کے آلے سے باہر نہیں جاتا۔"
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Location permission prompt",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "يستخدم سجود موقعك لحساب مواقيت الصلاة واتجاه القبلة. لا يغادر موقعك جهازك أبدًا."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "নামাজের সময় ও কিবলার দিক নির্ণয় করতে সুজুদ আপনার অবস্থান ব্যবহার করে। আপনার অবস্থান কখনো আপনার ডিভাইসের বাইরে যায় না।"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud verwendet deinen Standort, um die Gebetszeiten und die Qibla-Richtung zu berechnen. Dein Standort verlässt niemals dein Gerät."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sujud uses your location to calculate prayer times and the Qibla direction. Your location never leaves your device."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud usa tu ubicación para calcular los horarios de oración y la dirección de la qibla. Tu ubicación nunca sale de tu dispositivo."
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "سجود از موقعیت شما برای محاسبهٔ اوقات شرعی و جهت قبله استفاده می‌کند. موقعیت شما هرگز از دستگاهتان خارج نمی‌شود."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud utilise votre position pour calculer les heures de prière et la direction de la qibla. Votre position ne quitte jamais votre appareil."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud menggunakan lokasi Anda untuk menghitung waktu salat dan arah kiblat. Lokasi Anda tidak pernah meninggalkan perangkat Anda."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud menggunakan lokasi anda untuk mengira waktu solat dan arah kiblat. Lokasi anda tidak pernah meninggalkan peranti anda."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud использует вашу геопозицию, чтобы рассчитать время намаза и направление киблы. Ваша геопозиция никогда не покидает устройство."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sujud, namaz vakitlerini ve kıble yönünü hesaplamak için konumunuzu kullanır. Konumunuz asla cihazınızdan çıkmaz."
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "سجود نماز کے اوقات اور قبلہ کی سمت معلوم کرنے کے لیے آپ کا مقام استعمال کرتا ہے۔ آپ کا مقام کبھی آپ کے آلے سے باہر نہیں جاتا۔"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

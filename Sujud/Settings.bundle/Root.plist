@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationGroupContainerIdentifier</key>
+	<string>group.omar.Sujud</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Prayer Times</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>MWL</string>
+			<key>Key</key>
+			<string>calculationMethod</string>
+			<key>ShortTitles</key>
+			<array>
+				<string>MWL</string>
+				<string>ISNA</string>
+				<string>Egypt</string>
+				<string>Umm al-Qura</string>
+				<string>Karachi</string>
+				<string>Tehran</string>
+				<string>Qom</string>
+				<string>France</string>
+				<string>Russia</string>
+				<string>Singapore</string>
+			</array>
+			<key>Title</key>
+			<string>Calculation Method</string>
+			<key>Titles</key>
+			<array>
+				<string>Muslim World League</string>
+				<string>Islamic Society of North America</string>
+				<string>Egyptian General Authority of Survey</string>
+				<string>Umm al-Qura University, Makkah</string>
+				<string>University of Islamic Sciences, Karachi</string>
+				<string>Institute of Geophysics, University of Tehran</string>
+				<string>Leva Research Institute, Qom</string>
+				<string>Muslims of France</string>
+				<string>Spiritual Administration of Muslims of Russia</string>
+				<string>Islamic Religious Council of Singapore</string>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Values</key>
+			<array>
+				<string>MWL</string>
+				<string>ISNA</string>
+				<string>Egypt</string>
+				<string>Makkah</string>
+				<string>Karachi</string>
+				<string>Tehran</string>
+				<string>Jafari</string>
+				<string>France</string>
+				<string>Russia</string>
+				<string>Singapore</string>
+			</array>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>Standard</string>
+			<key>Key</key>
+			<string>asrMethod</string>
+			<key>Title</key>
+			<string>Asr Method</string>
+			<key>Titles</key>
+			<array>
+				<string>Standard (Shafi‘i, Maliki, Hanbali)</string>
+				<string>Hanafi</string>
+			</array>
+			<key>Type</key>
+			<string>PSRadioGroupSpecifier</string>
+			<key>Values</key>
+			<array>
+				<string>Standard</string>
+				<string>Hanafi</string>
+			</array>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

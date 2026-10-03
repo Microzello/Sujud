@@ -11,5 +11,6 @@ struct SujudWidgetsBundle: WidgetBundle {
     var body: some Widget {
         NextPrayerWidget()
         PrayerTimesWidget()
+        PrayerActivityWidget()
     }
 }

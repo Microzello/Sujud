@@ -57,6 +57,7 @@ struct SujudApp: App {
 
     private func settingsDidChange() {
         #if os(iOS)
+        PrayerLiveActivity.endFinished()
         WatchSync.shared.activate()
         WatchSync.shared.push()
         WidgetCenter.shared.reloadAllTimelines()

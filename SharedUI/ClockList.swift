@@ -14,6 +14,7 @@ struct ClockRow: Identifiable {
     let caption: String
     let name: String
     let date: Date?
+    var onTap: (() -> Void)? = nil
 }
 
 /// The title and rows, without scrolling.
@@ -64,7 +65,10 @@ struct ClockRowView: View {
         }
         .padding(.top, ClockMetrics.rowTop)
         .padding(.bottom, ClockMetrics.rowBottom)
+        .contentShape(Rectangle())
+        .onTapGesture { row.onTap?() }
         .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(row.onTap == nil ? [] : .isButton)
     }
 }
 

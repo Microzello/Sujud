@@ -24,6 +24,18 @@ nonisolated enum Prayer: String, CaseIterable, Identifiable, Sendable {
         case .isha: String(localized: "Isha")
         }
     }
+
+    /// Four letters or so, for tight spots like the Lock Screen gauge.
+    var shortName: String {
+        switch self {
+        case .fajr: String(localized: "prayer.short.fajr", defaultValue: "Fajr", comment: "Abbreviated prayer name")
+        case .sunrise: String(localized: "prayer.short.sunrise", defaultValue: "Rise", comment: "Abbreviated sunrise")
+        case .dhuhr: String(localized: "prayer.short.dhuhr", defaultValue: "Duhr", comment: "Abbreviated prayer name")
+        case .asr: String(localized: "prayer.short.asr", defaultValue: "Asr", comment: "Abbreviated prayer name")
+        case .maghrib: String(localized: "prayer.short.maghrib", defaultValue: "Mgrb", comment: "Abbreviated prayer name")
+        case .isha: String(localized: "prayer.short.isha", defaultValue: "Isha", comment: "Abbreviated prayer name")
+        }
+    }
 }
 
 /// A prayer at a specific moment.

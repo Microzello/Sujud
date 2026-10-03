@@ -18,7 +18,7 @@ struct NextPrayerStatus: View {
     }
 }
 
-/// The next prayer, when it is, and how long until then, centered and large.
+/// The next prayer, how long until then, and when it is, centered and large.
 struct NextPrayerHomeView: View {
     let next: PrayerEvent
     var isLarge = false
@@ -28,12 +28,12 @@ struct NextPrayerHomeView: View {
             Text(next.prayer.localizedName)
                 .font(.system(size: isLarge ? 64 : 34, weight: .bold))
                 .widgetAccentable()
-            Text("at \(next.date, format: .dateTime.hour().minute())")
-                .font(.system(size: isLarge ? 32 : 18))
-                .foregroundStyle(.secondary)
             Text("in \(Text(next.date, style: .timer))")
                 .font(.system(size: isLarge ? 44 : 24, weight: .semibold))
                 .monospacedDigit()
+            Text("at \(next.date, format: .dateTime.hour().minute())")
+                .font(.system(size: isLarge ? 32 : 18))
+                .foregroundStyle(.secondary)
         }
         .multilineTextAlignment(.center)
         .lineLimit(1)
@@ -42,14 +42,15 @@ struct NextPrayerHomeView: View {
     }
 }
 
-/// The countdown in bold over two columns of names and times.
+/// Two columns of names and times, under the countdown in bold.
 struct PrayerListView: View {
     let entry: PrayerEntry
     var isLarge = false
+    var showsStatus = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            if let next = entry.next {
+            if showsStatus, let next = entry.next {
                 NextPrayerStatus(next: next)
                     .font(isLarge ? .title.bold() : .subheadline.bold())
                     .lineLimit(1)
@@ -76,46 +77,20 @@ struct PrayerListView: View {
     }
 }
 
-/// The countdown on top, then the six times side by side.
-struct PrayerColumnsView: View {
+/// The two small widgets side by side. The countdown appears once, on the left.
+struct PrayerPairView: View {
     let entry: PrayerEntry
-    @Environment(\.locale) private var locale
-    @Environment(\.timeZone) private var timeZone
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        HStack(spacing: 16) {
             if let next = entry.next {
-                NextPrayerStatus(next: next)
-                    .font(.title.bold())
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
-                    .widgetAccentable()
+                NextPrayerHomeView(next: next)
             }
-            Spacer(minLength: 8)
-            HStack(alignment: .top, spacing: 4) {
-                ForEach(Prayer.allCases) { prayer in
-                    VStack(spacing: 4) {
-                        Text(prayer.localizedName)
-                            .font(.footnote)
-                            .foregroundStyle(.secondary)
-                        if let date = entry.times[prayer] {
-                            // The order of the day makes AM and PM clear, so leave them out to fit.
-                            Text(TimeFormatting.hourMinute(date, locale: locale, timeZone: timeZone))
-                                .font(.title2.weight(.medium))
-                        } else {
-                            Text(verbatim: "—")
-                                .font(.title2)
-                        }
-                    }
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
-                    .frame(maxWidth: .infinity)
-                }
-            }
+            PrayerListView(entry: entry, showsStatus: false)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
+
 
 /// Shown until the app has been opened and location allowed.
 struct OpenAppView: View {

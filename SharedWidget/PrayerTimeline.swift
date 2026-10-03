@@ -48,12 +48,12 @@ struct PrayerTimelineProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (PrayerEntry) -> Void) {
-        guard !context.isPreview else {
+        // Snapshots must be quick, so use the location the system already has, if any.
+        if let location = CLLocationManager().location {
+            let timetable = Timetable(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            completion(Self.entry(at: .now, timetable: timetable))
+        } else {
             completion(.sample)
-            return
-        }
-        Task {
-            completion(await Self.timeline().entries.first ?? .sample)
         }
     }
 
@@ -78,15 +78,17 @@ struct PrayerTimelineProvider: TimelineProvider {
             dates.insert(event.date)
         }
 
-        let entries = dates.sorted().map { date in
-            let status = timetable.status(at: date)
-            return PrayerEntry(
-                date: date,
-                next: status.next,
-                progress: status.progress(at: date),
-                times: timetable.upcoming(after: date).mapValues(\.date)
-            )
-        }
+        let entries = dates.sorted().map { entry(at: $0, timetable: timetable) }
         return Timeline(entries: entries, policy: .atEnd)
+    }
+
+    private static func entry(at date: Date, timetable: Timetable) -> PrayerEntry {
+        let status = timetable.status(at: date)
+        return PrayerEntry(
+            date: date,
+            next: status.next,
+            progress: status.progress(at: date),
+            times: timetable.upcoming(after: date).mapValues(\.date)
+        )
     }
 }

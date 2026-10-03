@@ -31,7 +31,7 @@ struct PrayerTimesWidgetView: View {
         } else {
             switch family {
             case .systemMedium:
-                PrayerColumnsView(entry: entry)
+                PrayerPairView(entry: entry)
             case .systemLarge:
                 PrayerListView(entry: entry, isLarge: true)
             default:

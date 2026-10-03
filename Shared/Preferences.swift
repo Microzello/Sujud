@@ -10,7 +10,7 @@
 import Foundation
 
 nonisolated enum Preferences {
-    static let appGroup = "group.omar.Sujud"
+    static let appGroup = "group.com.omarahmed.sujud"
     static let methodKey = "calculationMethod"
     static let asrKey = "asrMethod"
 

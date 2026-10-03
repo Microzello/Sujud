@@ -15,7 +15,7 @@ import BackgroundTasks
 #endif
 
 enum NotificationScheduler {
-    static let refreshTaskIdentifier = "omar.Sujud.refresh"
+    static let refreshTaskIdentifier = "com.omarahmed.sujud.refresh"
     private static let days = 12
 
     static func reschedule(for location: CLLocation) async {

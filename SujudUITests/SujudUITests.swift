@@ -14,7 +14,7 @@ final class SujudUITests: XCTestCase {
     }
 
     /// Walks through both tabs. Needs location access, e.g.
-    /// `xcrun simctl privacy booted grant location omar.Sujud`.
+    /// `xcrun simctl privacy booted grant location com.omarahmed.sujud`.
     @MainActor
     func testPrayerTimesAndQibla() throws {
         let app = XCUIApplication()

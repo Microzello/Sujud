@@ -46,7 +46,8 @@ struct PrayerTimesView: View {
                         id: prayer.rawValue,
                         caption: Self.caption(for: upcoming[prayer], now: now),
                         name: prayer.localizedName,
-                        date: upcoming[prayer]?.date
+                        date: upcoming[prayer]?.date,
+                        onTap: Self.tapAction(for: upcoming[prayer])
                     )
                 }
             )
@@ -57,14 +58,24 @@ struct PrayerTimesView: View {
         #endif
     }
 
-    /// "Today, in 1:23:45" or "Tomorrow, in 20:12:05".
+    /// "1:23:45", or "20:12:05, tomorrow".
     private static func caption(for event: PrayerEvent?, now: Date) -> String {
         // A non-empty placeholder keeps rows the same height when a time can't be calculated.
         guard let event else { return " " }
         let countdown = Countdown.string(from: now, to: event.date)
         return Calendar.autoupdatingCurrent.isDate(event.date, inSameDayAs: now)
-            ? String(localized: "Today, in \(countdown)")
-            : String(localized: "Tomorrow, in \(countdown)")
+            ? countdown
+            : String(localized: "\(countdown), tomorrow")
+    }
+
+    /// Tapping a prayer starts a Live Activity counting down to it (iPhone only).
+    private static func tapAction(for event: PrayerEvent?) -> (() -> Void)? {
+        #if os(iOS)
+        guard let event else { return nil }
+        return { PrayerLiveActivity.start(for: event) }
+        #else
+        return nil
+        #endif
     }
 }
 

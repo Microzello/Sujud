@@ -37,12 +37,14 @@ struct NextPrayerWidgetView: View {
             case .accessoryCircular:
                 // A ring that fills from the last prayer to the next.
                 Gauge(value: entry.progress) {
-                    Text(next.prayer.localizedName)
+                    Text(next.prayer.shortName)
                 } currentValueLabel: {
+                    // Narrow enough for "12:00:00" inside the ring; timers don't shrink to fit.
                     Text(next.date, style: .timer)
+                        .font(.system(size: 11, weight: .semibold))
+                        .fontWidth(.compressed)
                         .monospacedDigit()
                         .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.5)
                 }
                 .gaugeStyle(.accessoryCircular)
             case .accessoryInline:
@@ -64,10 +66,10 @@ struct NextPrayerWidgetView: View {
             default:
                 VStack(alignment: .leading, spacing: 0) {
                     Text(next.prayer.localizedName)
-                        .font(.headline)
+                        .font(.system(size: 19, weight: .semibold))
                         .widgetAccentable()
                     Text(next.date, style: .timer)
-                        .font(.title2.weight(.semibold))
+                        .font(.title3.weight(.semibold))
                         .monospacedDigit()
                     Text(next.date, format: .dateTime.hour().minute())
                         .font(.caption)

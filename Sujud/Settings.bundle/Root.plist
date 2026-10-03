@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ApplicationGroupContainerIdentifier</key>
-	<string>group.omar.Sujud</string>
+	<string>group.com.omarahmed.sujud</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>

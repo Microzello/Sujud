@@ -2,8 +2,11 @@
 //  PrayTimes.swift
 //  Sujud
 //
-//  Swift port of praytime.js v3.2 by Hamid Zarrabi-Zadeh (MIT License).
+//  Swift port of praytime.js v3.2 by Hamid Zarrabi-Zadeh.
 //  https://praytimes.org/docs/calculation
+//
+//  Copyright (c) 2007-2025 Hamid Zarrabi-Zadeh. MIT License; the full
+//  notice is in THIRD_PARTY_NOTICES.md.
 //
 
 import Foundation

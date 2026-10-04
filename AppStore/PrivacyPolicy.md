@@ -14,4 +14,4 @@ Sujud does not collect, store, or share any personal data.
 
 **Notifications.** Prayer time notifications are scheduled locally on your device.
 
-Questions: CONTACT_EMAIL
+Questions: [omar@omarconsultancy.com](mailto:omar@omarconsultancy.com)

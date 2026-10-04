@@ -11,7 +11,7 @@ Copy these into App Store Connect. The character counts are within Apple's limit
 | Secondary category | Reference |
 | Content rights | No, it does not contain, show, or access third-party content |
 | Age rating | Answer "None" or "No" to every question. The result is 4+ |
-| Privacy Policy URL | A public page with the text of `PrivacyPolicy.md`. A public GitHub Gist works, because this repo is private |
+| Privacy Policy URL | https://github.com/Microzello/Sujud/blob/main/AppStore/PrivacyPolicy.md |
 
 ## Pricing and Availability
 
@@ -50,7 +50,7 @@ Choose **"No, we do not collect data from this app"**. The label then reads **Da
 salah,salat,namaz,muslim,islam,islamic,fajr,dhuhr,asr,maghrib,isha,ramadan,mosque,compass,widget
 ```
 
-**Support URL**: the same public page as the privacy policy, or any page with a way to contact you.
+**Support URL**: https://github.com/Microzello/Sujud
 
 **Copyright**: 2026 Omar Ahmed
 

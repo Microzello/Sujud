@@ -20,10 +20,13 @@ final class SujudUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // The first launch asks for notification permission.
-        let allow = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Allow"]
-        if allow.waitForExistence(timeout: 5) {
-            allow.tap()
+        // The first launch asks for location, then notification, permission.
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        for title in ["Allow While Using App", "Allow"] {
+            let allow = springboard.buttons[title]
+            if allow.waitForExistence(timeout: 5) {
+                allow.tap()
+            }
         }
 
         for prayer in ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"] {
@@ -32,7 +35,8 @@ final class SujudUITests: XCTestCase {
         }
         attachScreenshot(named: "Prayer Times")
 
-        let qiblaTab = app.buttons["Qibla"]
+        // iPad's tab bar can list a tab more than once.
+        let qiblaTab = app.buttons["Qibla"].firstMatch
         guard qiblaTab.exists else { return }
         qiblaTab.tap()
         XCTAssertTrue(qiblaTab.isSelected)

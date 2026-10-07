@@ -73,7 +73,8 @@ Sign-in required: **No**.
 
 These are in `Screenshots/`, at the exact sizes App Store Connect asks for, as RGB PNGs with no alpha channel. Drag each set into its slot in order:
 
-- iPhone 6.5" Display (1284 × 2778): `iPhone 6.5 - 1 Dark`, `iPhone 6.5 - 2 Light`, `iPhone 6.5 - 3 Map`
+- iPhone with Dynamic Island, medium display (1206 × 2622): `iPhone 6.3 - 1 Dark`, `iPhone 6.3 - 2 Light`, `iPhone 6.3 - 3 Map`
+- If App Store Connect asks for a large display instead, the same three are in `iPhone 6.9` (1320 × 2868), the original simulator size
 - iPad 13" Display (2064 × 2752): `iPad 13 - 1 Dark`, `iPad 13 - 2 Light`, `iPad 13 - 3 Map`
 - Apple Watch (416 × 496): `Apple Watch - 1`
 - Mac (2880 × 1800): `Mac - 1`

@@ -2,8 +2,9 @@
 //  WidgetLocation.swift
 //  Sujud
 //
-//  Widgets get the location straight from the system rather than from
-//  anything the app saved.
+//  Widgets get the location from the system when they're allowed to, so
+//  they follow the user while travelling, and otherwise use the one the
+//  app saved.
 //
 
 import CoreLocation
@@ -14,10 +15,18 @@ enum WidgetLocation {
         if let location = manager.location {
             return location
         }
+        if canUpdate(manager), let location = await freshLocation(timeout: .seconds(10)) {
+            return location
+        }
+        return Preferences.savedLocation
+    }
+
+    private static func canUpdate(_ manager: CLLocationManager) -> Bool {
         #if os(iOS)
-        guard manager.isAuthorizedForWidgetUpdates else { return nil }
+        manager.isAuthorizedForWidgetUpdates
+        #else
+        manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways
         #endif
-        return await freshLocation(timeout: .seconds(10))
     }
 
     private static func freshLocation(timeout: Duration) async -> CLLocation? {

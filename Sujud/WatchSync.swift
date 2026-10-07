@@ -3,10 +3,12 @@
 //  Sujud
 //
 //  Sends the calculation settings chosen in the iPhone's Settings app to
-//  the Apple Watch, which calculates its own times from its own location.
+//  the Apple Watch, along with the iPhone's location, which the watch uses
+//  when it can't find its own.
 //
 
 #if os(iOS)
+import CoreLocation
 import WatchConnectivity
 
 final class WatchSync: NSObject, WCSessionDelegate {
@@ -22,10 +24,15 @@ final class WatchSync: NSObject, WCSessionDelegate {
         guard WCSession.isSupported() else { return }
         let session = WCSession.default
         guard session.activationState == .activated, session.isPaired, session.isWatchAppInstalled else { return }
-        try? session.updateApplicationContext([
+        var context: [String: Any] = [
             Preferences.methodKey: Preferences.method.rawValue,
             Preferences.asrKey: Preferences.asr.rawValue,
-        ])
+        ]
+        if let location = Preferences.savedLocation {
+            context[Preferences.latitudeKey] = location.coordinate.latitude
+            context[Preferences.longitudeKey] = location.coordinate.longitude
+        }
+        try? session.updateApplicationContext(context)
     }
 
     nonisolated func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {

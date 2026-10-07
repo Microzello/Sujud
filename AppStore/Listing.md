@@ -19,7 +19,7 @@ Free, in all countries. If China mainland is selected, Apple asks for an ICP fil
 
 ## App Privacy
 
-Choose **"No, we do not collect data from this app"**. The label then reads **Data Not Collected**. Location is used only on the device, and Apple doesn't count that as collection.
+Choose **"No, we do not collect data from this app"**. The label then reads **Data Not Collected**. Location is used and saved only on the device (and the paired Apple Watch), and Apple doesn't count that as collection.
 
 ## Version 1.0
 
@@ -33,8 +33,9 @@ Choose **"No, we do not collect data from this app"**. The label then reads **Da
 >
 > Sujud shows today's six times (Fajr, Sunrise, Dhuhr, Asr, Maghrib and Isha) with a countdown to the next prayer.
 >
-> • Works offline. Every time is calculated on your device.
-> • No accounts, ads, or tracking. Your location never leaves your device.
+> • Use your current location, or choose any place on the map.
+> • Every time is calculated on your device, even offline.
+> • No accounts, ads, or tracking. Your location stays on your devices.
 > • A notification at each prayer time.
 > • Widgets for the Home Screen and Lock Screen.
 > • Tap a prayer to follow its countdown in a Live Activity.
@@ -60,7 +61,7 @@ Sign-in required: **No**.
 
 **Notes**
 
-> Sujud has no account and makes no network requests. When asked, allow location access. The app uses your location to calculate prayer times and the Qibla direction on the device.
+> Sujud has no account. Location Services are optional. On first launch Sujud opens a map and asks for location access. If access is allowed, it uses the current location and closes the map. If access is denied, move the map so the pin is on any place and tap the checkmark (top right). The map button at the bottom right of the tab bar (bottom right of the window on Mac) changes the location later. The location button at the top left of the map uses the current location. Prayer times, widgets, notifications and the Qibla compass all work with a location chosen on the map.
 >
 > • The calculation method is in the Settings app under Apps › Sujud. On the Mac it is in Sujud › Settings.
 > • Tap any prayer in the list to start a Live Activity countdown on the Lock Screen and in the Dynamic Island.

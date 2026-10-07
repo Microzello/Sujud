@@ -214,6 +214,77 @@
         }
       }
     },
+    "Allow location access, or choose a location in Sujud on your iPhone." : {
+      "comment" : "Shown on Apple Watch when location permission is denied",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسمح بالوصول إلى الموقع، أو اختر موقعًا في سجود على iPhone."
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অবস্থানের অনুমতি দিন, অথবা আপনার iPhone-এ সুজুদে একটি অবস্থান বেছে নিন।"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erlaube den Zugriff auf deinen Standort oder wähle in Sujud auf deinem iPhone einen Ort."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permite el acceso a tu ubicación o elige una ubicación en Sujud en tu iPhone."
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اجازهٔ دسترسی به مکان را بدهید یا در سجود روی iPhone خود مکانی انتخاب کنید."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisez l’accès à votre position ou choisissez un lieu dans Sujud sur votre iPhone."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izinkan akses lokasi, atau pilih lokasi di Sujud pada iPhone Anda."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benarkan akses lokasi, atau pilih lokasi dalam Sujud pada iPhone anda."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разрешите доступ к геопозиции или выберите место в Sujud на iPhone."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konum erişimine izin verin veya iPhone'unuzdaki Sujud'da bir konum seçin."
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مقام تک رسائی کی اجازت دیں، یا اپنے iPhone پر سجود میں مقام منتخب کریں۔"
+          }
+        }
+      }
+    },
     "Asr" : {
       "comment" : "Prayer name",
       "localizations" : {
@@ -494,6 +565,77 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "اگلی نماز تک الٹی گنتی۔"
+          }
+        }
+      }
+    },
+    "Current Location" : {
+      "comment" : "Accessibility label: use the device's current location",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الموقع الحالي"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "বর্তমান অবস্থান"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktueller Ort"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubicación actual"
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مکان فعلی"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Position actuelle"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi Saat Ini"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi Semasa"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текущее местоположение"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçerli Konum"
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "موجودہ مقام"
           }
         }
       }
@@ -1279,6 +1421,77 @@
         }
       }
     },
+    "Location" : {
+      "comment" : "Button that opens the map for choosing a location",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الموقع"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অবস্থান"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ort"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubicación"
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مکان"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lieu"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположение"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konum"
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مقام"
+          }
+        }
+      }
+    },
     "Location Access Needed" : {
       "comment" : "Title shown when location permission is denied",
       "localizations" : {
@@ -1705,77 +1918,6 @@
         }
       }
     },
-    "Open Settings" : {
-      "comment" : "Button that opens the system settings",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فتح الإعدادات"
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "সেটিংস খুলুন"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einstellungen öffnen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abrir Ajustes"
-          }
-        },
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "باز کردن تنظیمات"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ouvrir les réglages"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buka Pengaturan"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buka Tetapan"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть настройки"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ayarları Aç"
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ترتیبات کھولیں"
-          }
-        }
-      }
-    },
     "Open Sujud" : {
       "comment" : "Widget text when no location is available yet",
       "localizations" : {
@@ -2060,6 +2202,77 @@
         }
       }
     },
+    "Set Location" : {
+      "comment" : "Accessibility label: use the place under the pin on the map",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعيين الموقع"
+          }
+        },
+        "bn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "অবস্থান নির্ধারণ করুন"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ort festlegen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establecer ubicación"
+          }
+        },
+        "fa" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنظیم مکان"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir le lieu"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atur Lokasi"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tetapkan Lokasi"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Задать местоположение"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konumu Ayarla"
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مقام مقرر کریں"
+          }
+        }
+      }
+    },
     "Spiritual Administration of Muslims of Russia" : {
       "comment" : "Calculation method",
       "localizations" : {
@@ -2198,77 +2411,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "معیاری (شافعی، مالکی، حنبلی)"
-          }
-        }
-      }
-    },
-    "Sujud needs your location to calculate prayer times and the Qibla direction. Your location never leaves your device." : {
-      "comment" : "Explanation shown when location permission is denied",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يحتاج سجود إلى موقعك لحساب مواقيت الصلاة واتجاه القبلة. لا يغادر موقعك جهازك أبدًا."
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "নামাজের সময় ও কিবলার দিক নির্ণয় করতে সুজুদের আপনার অবস্থান প্রয়োজন। আপনার অবস্থান কখনো আপনার ডিভাইসের বাইরে যায় না।"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud benötigt deinen Standort, um die Gebetszeiten und die Qibla-Richtung zu berechnen. Dein Standort verlässt niemals dein Gerät."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud necesita tu ubicación para calcular los horarios de oración y la dirección de la qibla. Tu ubicación nunca sale de tu dispositivo."
-          }
-        },
-        "fa" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "سجود برای محاسبهٔ اوقات شرعی و جهت قبله به موقعیت شما نیاز دارد. موقعیت شما هرگز از دستگاهتان خارج نمی‌شود."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud a besoin de votre position pour calculer les heures de prière et la direction de la qibla. Votre position ne quitte jamais votre appareil."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud memerlukan lokasi Anda untuk menghitung waktu salat dan arah kiblat. Lokasi Anda tidak pernah meninggalkan perangkat Anda."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud memerlukan lokasi anda untuk mengira waktu solat dan arah kiblat. Lokasi anda tidak pernah meninggalkan peranti anda."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud нужна ваша геопозиция, чтобы рассчитать время намаза и направление киблы. Ваша геопозиция никогда не покидает устройство."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sujud, namaz vakitlerini ve kıble yönünü hesaplamak için konumunuza ihtiyaç duyar. Konumunuz asla cihazınızdan çıkmaz."
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "سجود کو نماز کے اوقات اور قبلہ کی سمت معلوم کرنے کے لیے آپ کا مقام درکار ہے۔ آپ کا مقام کبھی آپ کے آلے سے باہر نہیں جاتا۔"
           }
         }
       }

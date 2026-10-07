@@ -48,8 +48,8 @@ struct PrayerTimelineProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (PrayerEntry) -> Void) {
-        // Snapshots must be quick, so use the location the system already has, if any.
-        if let location = CLLocationManager().location {
+        // Snapshots must be quick, so use a location that is already known, if any.
+        if let location = CLLocationManager().location ?? Preferences.savedLocation {
             let timetable = Timetable(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             completion(Self.entry(at: .now, timetable: timetable))
         } else {

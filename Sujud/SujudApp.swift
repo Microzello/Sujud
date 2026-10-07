@@ -25,7 +25,8 @@ struct SujudApp: App {
                 .environment(locationService)
                 .onChange(of: scenePhase, initial: true) { _, phase in
                     guard phase == .active else { return }
-                    // Settings may have changed in the Settings app while we were away.
+                    // Settings may have changed in the Settings app while we
+                    // were away, and the user may have travelled.
                     locationService.refresh()
                     settingsDidChange()
                 }
@@ -33,7 +34,7 @@ struct SujudApp: App {
                     settingsDidChange()
                 }
                 .onChange(of: locationService.location) {
-                    rescheduleNotifications()
+                    settingsDidChange()
                 }
         }
         #if os(macOS)

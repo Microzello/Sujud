@@ -9,8 +9,10 @@ import Observation
 import UIKit
 #endif
 
-/// Asks the device for its location (and compass heading when the Qibla
-/// screen is visible). Nothing is persisted.
+/// The location prayer times are calculated for: the device's own when
+/// Location Services are allowed, otherwise the last one saved (a place
+/// chosen on the map, or synced from the iPhone on the watch). Also reports
+/// the compass heading while the Qibla screen is visible.
 @MainActor
 @Observable
 final class LocationService: NSObject {
@@ -26,6 +28,7 @@ final class LocationService: NSObject {
 
     @ObservationIgnored private let manager = CLLocationManager()
     @ObservationIgnored private var headingClients = 0
+    @ObservationIgnored private var deviceLocationWaiters: [CheckedContinuation<CLLocation?, Never>] = []
 
     /// Whether this device has a compass. The simulator has none, so it
     /// pretends to face north to keep the Qibla screen previewable.
@@ -42,10 +45,12 @@ final class LocationService: NSObject {
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyKilometer
         updateAccess()
-        if access == .authorized {
-            // The system's last known fix, so times appear instantly on launch.
-            location = manager.location
-        }
+        // The system's last known fix, if allowed, so times appear instantly on launch.
+        location = (access == .authorized ? manager.location : nil) ?? Preferences.savedLocation
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(savedLocationDidChange),
+            name: Preferences.locationDidChange, object: nil
+        )
     }
 
     /// A fixed location for SwiftUI previews, which can't use Location Services.
@@ -55,16 +60,64 @@ final class LocationService: NSObject {
         access = .authorized
     }
 
-    /// Requests permission if needed, then a fresh one-shot location fix.
+    /// Updates the location from the device, if allowed, in case the user
+    /// is travelling. On iPhone and Mac permission is only ever requested
+    /// from the location picker.
     func refresh() {
         switch manager.authorizationStatus {
         case .notDetermined:
+            #if os(watchOS)
+            // The watch has no map, so it asks straight away; the place
+            // chosen on the iPhone is the fallback.
             manager.requestWhenInUseAuthorization()
+            #endif
         case .denied, .restricted:
             break
         default:
             manager.requestLocation()
         }
+    }
+
+    /// Asks for permission if needed, then waits for the device's location
+    /// and uses it. Nil if permission is denied or the location can't be found.
+    func requestDeviceLocation() async -> CLLocation? {
+        await withCheckedContinuation { continuation in
+            deviceLocationWaiters.append(continuation)
+            switch manager.authorizationStatus {
+            case .notDetermined:
+                manager.requestWhenInUseAuthorization()
+            case .denied, .restricted:
+                resolveDeviceLocationWaiters(with: nil)
+            default:
+                manager.requestLocation()
+            }
+        }
+    }
+
+    /// Uses a place chosen on the map.
+    func choose(_ coordinate: CLLocationCoordinate2D) {
+        use(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
+    }
+
+    private func use(_ newLocation: CLLocation) {
+        location = newLocation
+        Preferences.save(newLocation.coordinate)
+    }
+
+    private func resolveDeviceLocationWaiters(with result: CLLocation?) {
+        let waiters = deviceLocationWaiters
+        deviceLocationWaiters.removeAll()
+        for waiter in waiters {
+            waiter.resume(returning: result)
+        }
+    }
+
+    /// The iPhone synced a new location to the watch.
+    @objc private func savedLocationDidChange() {
+        guard access != .authorized || location == nil, let saved = Preferences.savedLocation,
+              saved.coordinate.latitude != location?.coordinate.latitude
+                || saved.coordinate.longitude != location?.coordinate.longitude else { return }
+        location = saved
     }
 
     // Macs have no compass, so heading updates are iOS and watchOS only.
@@ -133,8 +186,10 @@ extension LocationService: CLLocationManagerDelegate {
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         MainActor.assumeIsolated {
             updateAccess()
-            if access == .authorized {
-                manager.requestLocation()
+            switch access {
+            case .authorized: manager.requestLocation()
+            case .denied: resolveDeviceLocationWaiters(with: nil)
+            case .undetermined: break
             }
         }
     }
@@ -142,12 +197,16 @@ extension LocationService: CLLocationManagerDelegate {
     nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let latest = locations.last else { return }
         MainActor.assumeIsolated {
-            location = latest
+            use(latest)
+            resolveDeviceLocationWaiters(with: latest)
         }
     }
 
     nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        // A transient failure; the next refresh will try again.
+        // Keep the current location; the next refresh will try again.
+        MainActor.assumeIsolated {
+            resolveDeviceLocationWaiters(with: nil)
+        }
     }
 
     #if !os(macOS)

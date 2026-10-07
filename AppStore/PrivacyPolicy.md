@@ -1,12 +1,12 @@
 # Sujud Privacy Policy
 
-_Effective October 3, 2026_
+_Effective October 7, 2026_
 
-Sujud does not collect, store, or share any personal data.
+Sujud does not collect or share any personal data.
 
-**Location.** Sujud uses your device's location to calculate prayer times and the Qibla direction. The calculation happens entirely on your device. Your location is never sent anywhere and is never saved by Sujud.
+**Location.** Sujud calculates prayer times and the Qibla direction for your location. It uses your device's location if you allow Location Services, or a place you choose on the map if you don't. The calculation happens entirely on your device. The location is saved only on your device, and on your paired Apple Watch, so the times are ready when you open the app or look at a widget. Sujud never sends it anywhere else.
 
-**No internet.** Sujud does not connect to the internet.
+**Map.** The map for choosing a place is Apple Maps, which loads map data from Apple while it's open. Apple's privacy policy applies to Apple Maps.
 
 **No accounts, analytics, advertising, or tracking.**
 

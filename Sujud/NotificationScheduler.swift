@@ -73,8 +73,9 @@ enum NotificationScheduler {
     /// Runs occasionally in the background to keep alerts queued even if
     /// the app isn't opened for a while.
     static func refreshInBackground() async {
-        // The system's last known fix; background tasks can't wait for a new one.
-        guard let location = CLLocationManager().location else {
+        // The system's last known fix, if allowed, since background tasks can't
+        // wait for a new one, or else the saved location.
+        guard let location = CLLocationManager().location ?? Preferences.savedLocation else {
             scheduleBackgroundRefresh()
             return
         }

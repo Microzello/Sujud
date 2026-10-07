@@ -71,11 +71,11 @@ Sign-in required: **No**.
 
 ## Screenshots
 
-These are in `Screenshots/`, already at the required sizes. Drag each set into its slot:
+These are in `Screenshots/`, at the exact sizes App Store Connect asks for, as RGB PNGs with no alpha channel. Drag each set into its slot in order:
 
-- iPhone 6.5" Display (1284 × 2778), the slot App Store Connect asks for: `iPhone 6.5 - 1 Dark`, `iPhone 6.5 - 2 Light`. The 6.9" originals (1320 × 2868) can go in Media Manager if wanted
-- iPad 13" Display (2064 × 2752): `iPad 13 - 1 Dark`, `iPad 13 - 2 Light`
+- iPhone 6.5" Display (1284 × 2778): `iPhone 6.5 - 1 Dark`, `iPhone 6.5 - 2 Light`, `iPhone 6.5 - 3 Map`
+- iPad 13" Display (2064 × 2752): `iPad 13 - 1 Dark`, `iPad 13 - 2 Light`, `iPad 13 - 3 Map`
 - Apple Watch (416 × 496): `Apple Watch - 1`
 - Mac (2880 × 1800): `Mac - 1`
 
-The Qibla screen isn't included because the simulator on this Intel Mac draws the 🕋 marker as "?". If you want it, take a screenshot on your iPhone (6.9" model) and add it as a third iPhone screenshot.
+The Qibla screen isn't included because the simulator on this Intel Mac draws the 🕋 marker as "?".

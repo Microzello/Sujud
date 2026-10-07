@@ -75,7 +75,8 @@ struct LocationPicker: View {
             }
         }
         #if os(macOS)
-        .frame(minWidth: 520, minHeight: 560)
+        // Fits inside the default window.
+        .frame(width: 400, height: 600)
         #endif
     }
 
